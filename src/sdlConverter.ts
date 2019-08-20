@@ -173,10 +173,8 @@ export class SDLConverter {
     if (list.length > 1 || list[0] === false) {
       objectMeta.list = list;
     }
-    if (!isNonNull && source === "output") {
+    if (!isNonNull && source === "output" || source === "input") {
       objectMeta.nullable = true;
-    } else if (isNonNull && source === "input") {
-      objectMeta.required = true;
     }
     if (field.description) {
       objectMeta.description = field.description;
